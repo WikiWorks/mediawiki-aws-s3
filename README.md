@@ -168,3 +168,13 @@ Some software (such as MinIO) doesn't use subdomains for buckets, in which case 
 ```php
 $wgFileBackends['s3']['use_path_style_endpoint'] = true;
 ```
+
+## Using a bucket with ACLs disabled
+
+By default, new S3 objects are created with the "public-read" ACL, or "private" in a private wiki. If the bucket has ACLs disabled (Object Ownership is "Bucket owner enforced", the default for new Amazon S3 buckets), S3 rejects these requests with AccessControlListNotSupported. To create objects without an ACL, add the following line to LocalSettings.php:
+
+```php
+$wgFileBackends['s3']['useACL'] = false;
+```
+
+Access to the objects is then controlled by the bucket policy alone.

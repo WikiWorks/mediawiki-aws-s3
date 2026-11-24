@@ -2,7 +2,7 @@ List of changes between releases of Extension:AWS.
 
 == master branch (will become AWS 0.13.2 or 0.14.0, depending on magnitude of changes) ==
 
-No changes since AWS 0.13.1.
+* Added $wgFileBackends['s3']['useACL'] setting, which allows to use buckets with ACLs disabled.
 
 == AWS 0.13.1 ==
 
